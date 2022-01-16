@@ -1,4 +1,6 @@
-from .hSQL.sql_hander import Queryhandler
+from hSQL import Queryhandler
+from hSQL.mysql_connector import create_connection
+from Constants.secret import HOST, LOGIN, PASSWORD
 
 connection = create_connection(HOST, LOGIN, PASSWORD, 'arsbot_test')
 qh = Queryhandler(connection)
