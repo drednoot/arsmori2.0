@@ -38,9 +38,9 @@ class Queryhandler:
 
         
     def get_rows_count(self, tab, cond = None):        
-        rows = self.select(('COUNT(*)',), tab, cond)[0][0]
+        self.select(('*',), tab, cond)
 
-        return rows
+        return self.cur.rowcount
 
 
     # UPDATE
@@ -134,6 +134,7 @@ class Queryhandler:
         print(query)
         rows = self.fetch(query)
 
-        row_list = Row_list(qh_rows=rows, qh_sel_tup=sel_tup)
+        # print(rows)
+        # row_list = Row_list(qh_rows=rows, qh_sel_tup=sel_tup)
 
-        # return row_list
+        return rows

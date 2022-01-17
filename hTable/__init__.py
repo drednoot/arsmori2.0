@@ -1,3 +1,6 @@
+from hTable.Anime_scripts import Names
+from Constants import get_functions as getf
+
 class Row:
 	def __init__(self, key, value = "NULL"):
 		self.key = str(key)
@@ -38,10 +41,20 @@ class Anime_names(Table):
 		self.type_id = Row("type_id")
 		self.anime_name = Row("anime_name")
 
+		tn = Anime_type_names(self.qh)
+		self.names = Names(tn.get_type_count())
+
+
 	def get(self):
-		result = self.qh.select((self.id.key, self.type_id.key, self.anime_name.key),
+		rows = self.qh.select((self.id.key, self.type_id.key, self.anime_name.key),
 			self.name,
 			f'{self.anime_id.key} = {self.anime_id.val}')
+
+		print(rows)
+		
+
+		# for i in rows:
+		# 	self.id_name{}
 
 
 
@@ -50,6 +63,12 @@ class Anime_type_names(Table):
 		super().__init__(qh)
 		self.id = Row("type_id")
 		self.type_name = Row("type_name")
+
+
+	def get_type_count(self):
+		row_count = getf.get_type_count(self.qh, self.name)
+
+		return row_count
 
 
 
