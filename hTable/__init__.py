@@ -26,10 +26,14 @@ class Animes(Table):
 		super().__init__(qh)
 		self.id = Row("anime_id", id)
 
+		self.names = None
+
 
 	def get_names(self):
-		self.names = Anime_names(self.qh, self.id)
-		self.names.get()
+		anime_names = Anime_names(self.qh, self.id)
+		self.names = anime_names.get()
+
+		return self.names
 
 
 
@@ -53,8 +57,13 @@ class Anime_names(Table):
 		print(rows)
 		
 
-		# for i in rows:
-		# 	self.id_name{}
+		for i in rows:
+			id_ = i[0]
+			type_ = i[1]
+			name = i[2]
+			self.names.add_row(id_, type_, name)
+
+		return self.names
 
 
 

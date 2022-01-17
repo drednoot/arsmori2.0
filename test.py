@@ -8,5 +8,6 @@ qh = Queryhandler(connection)
 
 haruhi = Animes(qh, 6)
 haruhi.get_names()
+print(haruhi.names.names)
 
 qh.close()
