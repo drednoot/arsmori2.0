@@ -1,4 +1,4 @@
-from hSQL import Queryhandler
+from hSQL import Queryhandler as Qh
 
 def main():
 	pass

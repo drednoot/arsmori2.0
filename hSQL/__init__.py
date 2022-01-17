@@ -136,4 +136,4 @@ class Queryhandler:
 
         row_list = Row_list(qh_rows=rows, qh_sel_tup=sel_tup)
 
-        return row_list
+        # return row_list
