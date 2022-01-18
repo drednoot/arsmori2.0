@@ -113,5 +113,5 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-Constants/secret.py
-test.py
+origin/dev/Constants/secret.py
+origin/dev/test.py
