@@ -1,4 +1,6 @@
-ANIME_TYPE_COUNT = None
+class Constants:
+	def __init__(self):
+		self.ANIME_TYPE_COUNT = None
 
 # SEARCH_PAGE_SIZE = 5
 # DATABASE_NAME = 'arsbot_test'
