@@ -1,4 +1,0 @@
-SECRET = "1205607275:AAEFtagn-8oRQlAsTImUcesNMeCFlRnL9EA"
-HOST = "localhost"
-LOGIN = "root"
-PASSWORD = ""
