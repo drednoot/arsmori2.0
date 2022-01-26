@@ -1,6 +1,8 @@
 class Constants:
 	def __init__(self):
-		self.ANIME_TYPE_COUNT = None
+		self.type_counts = {}
+		self.type_counts["Anime_type_names"] = None
+		self.type_counts["Distribution_types"] = None
 
 # SEARCH_PAGE_SIZE = 5
 # DATABASE_NAME = 'arsbot_test'

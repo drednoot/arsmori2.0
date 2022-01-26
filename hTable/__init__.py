@@ -116,6 +116,9 @@ class Distributors(Table):
 		self.id = Row("distributor_id")
 		self.name = Row("distributor_name")
 
+		tn = Distribution_types(self.qh)
+		self.types = Types(tn.get_type_count())
+
 
 
 class Distributions(Table):
@@ -133,3 +136,8 @@ class Distribution_types(Table):
 		super().__init__(qh)
 		self.id = Row("type_id")
 		self.type_name = Row("type_name")
+
+		def get_type_count(self):
+			row_count = getf.get_type_count(self.qh, self.name)
+
+			return row_count
