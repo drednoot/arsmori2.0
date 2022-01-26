@@ -102,9 +102,6 @@ class Statuses(Table):
 		self.episode_id = Row("episode_id")
 		self.distribution_type = Row("distribution_type")
 		self.distributor_id = Row("distributor_id")
-<<<<<<< Updated upstream
-		self.watched = Row("watched")
-=======
 		self.watched = Row("watched")
 
 
@@ -136,4 +133,3 @@ class Distribution_types(Table):
 		super().__init__(qh)
 		self.id = Row("type_id")
 		self.type_name = Row("type_name")
->>>>>>> Stashed changes
