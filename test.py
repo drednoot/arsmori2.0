@@ -9,8 +9,6 @@ qh = Queryhandler(connection)
 hT = hTelegram(qh)
 hT.run()
 
-# haruhi = Animes(qh, 6)
-# haruhi.get_names()
-# print(haruhi.names.names)
+
 
 qh.close()

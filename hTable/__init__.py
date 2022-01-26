@@ -103,3 +103,41 @@ class Statuses(Table):
 		self.distribution_type = Row("distribution_type")
 		self.distributor_id = Row("distributor_id")
 		self.watched = Row("watched")
+
+
+
+################################    distributors and such    ############################
+
+
+
+class Distributors(Table):
+	def __init__(self, qh):
+		super().__init__(qh)
+		self.id = Row("distributor_id")
+		self.name = Row("distributor_name")
+
+		tn = Distribution_types(self.qh)
+		self.types = Types(tn.get_type_count())
+
+
+
+class Distributions(Table):
+	def __init__(self, qh):
+		super().__init__(qh)
+		self.id = Row("distribution_id")
+		self.distributor_id = Row("distributor_id")
+		self.anime_id = Row("anime_id")
+		self.distribution_type = Row("distribution_type")
+
+
+
+class Distribution_types(Table):
+	def __init__(self, qh):
+		super().__init__(qh)
+		self.id = Row("type_id")
+		self.type_name = Row("type_name")
+
+		def get_type_count(self):
+			row_count = getf.get_type_count(self.qh, self.name)
+
+			return row_count
